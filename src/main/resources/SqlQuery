@@ -1,0 +1,36 @@
+table생성쿼리
+
+CREATE TABLE Board (
+    seq INT AUTO_INCREMENT PRIMARY KEY,
+    id VARCHAR(50),
+    pw VARCHAR(50),
+    nickname VARCHAR(50),
+    productName VARCHAR(255),
+    price INT DEFAULT 0,
+    description TEXT,
+    location VARCHAR(100),
+    image_url VARCHAR(255),
+    registration_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    prod_condition VARCHAR(50),
+    likecount INT DEFAULT 0
+)
+
+CRUD 쿼리문
+데이터 추가   insert into BOARD (id, pw, nickname, productName, price, description, location, image_url, registration_date,prod_condtion) values ('제목','홍길동','내용');
+데이터 수정   update BOARD set title='제목2', content='내용' where seq=10
+데이터 삭제   delete from BOARD  where seq=10
+데이터 목록
+select * from BOARD  order by regdate desc
+select * from BOARD  where seq=10
+select title, content from BOARD  where seq=10
+
+
+create table MEMBER (
+    seq int AUTO_INCREMENT,
+    userid varchar(20),
+    username varchar(20),
+    password varchar(20),
+    primary key(seq)
+)
+
+insert into member (userid, username, password) values ('admin', ‘관리자’,password(‘1234’) );

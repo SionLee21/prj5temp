@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+
+    <insert id="insertBoard">
+        <![CDATA[
+        INSERT INTO Board (id, pw, nickname, productName, price, description, location, image_url, prod_condition)
+        VALUES (#{seller_id}, #{pw}, #{nickname}, #{productName}, #{price}, #{description}, #{location}, #{image_url}, #{condition})
+        ]]>
+    </insert>
+
+    <update id="updateBoard">
+        <![CDATA[
+        UPDATE Board
+        SET productName=#{productName}, price=#{price}, nickname=#{nickname}, location=#{location},
+            description=#{description}, image_url=#{image_url}, prod_condition=#{condition}
+        WHERE seq=#{seq}
+        ]]>
+    </update>
+
+    <delete id="deleteBoard">
+        <![CDATA[
+        DELETE FROM Board
+        WHERE seq=#{seq}
+        ]]>
+    </delete>
+
+    <select id="getBoard" resultType="board">
+        <![CDATA[
+        SELECT * FROM Board WHERE seq=#{seq}
+        ]]>
+    </select>
+
+    <select id="getBoardList" resultType="board">
+        <![CDATA[
+        SELECT * FROM Board ORDER BY seq DESC
+        ]]>
+    </select>
+
+</mapper>
