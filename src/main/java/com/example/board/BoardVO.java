@@ -13,10 +13,18 @@ public class BoardVO {
     private String seller_id;
     private String image_url;
     private Date registration_date;
-    private String condition;
+    private String prod_condition;
     private String nickname;
     private int likecount;
     private int price;
+
+    public String getProd_condition() {
+        return prod_condition;
+    }
+
+    public void setProd_condition(String prod_condition) {
+        this.prod_condition = prod_condition;
+    }
 
     public int getPrice() {
         return price;
@@ -91,13 +99,6 @@ public class BoardVO {
         this.registration_date = registration_date;
     }
 
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
 
     public int getSeq() {
         return seq;
