@@ -34,7 +34,7 @@ public class FileUpload {
             one.setDescription(multipartRequest.getParameter("description"));
             one.setLocation(multipartRequest.getParameter("location"));
             one.setImage_url(filename);
-            one.setCondition(multipartRequest.getParameter("condition"));
+            one.setProd_condition(multipartRequest.getParameter("prod_condition"));
 
             // Parsing and setting price if available
             String priceStr = multipartRequest.getParameter("price");
